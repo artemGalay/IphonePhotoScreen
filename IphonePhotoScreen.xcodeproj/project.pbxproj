@@ -54,14 +54,78 @@
 		D954673628C238EC003AAD10 /* IphonePhotoScreen */ = {
 			isa = PBXGroup;
 			children = (
-				D954673728C238EC003AAD10 /* AppDelegate.swift */,
-				D954673928C238EC003AAD10 /* SceneDelegate.swift */,
-				D954673B28C238EC003AAD10 /* ViewController.swift */,
-				D954674028C238ED003AAD10 /* Assets.xcassets */,
-				D954674228C238ED003AAD10 /* LaunchScreen.storyboard */,
-				D954674528C238ED003AAD10 /* Info.plist */,
+				D954674B28C23F7E003AAD10 /* Sources */,
+				D954674C28C23F8C003AAD10 /* Resources */,
 			);
 			path = IphonePhotoScreen;
+			sourceTree = "<group>";
+		};
+		D954674B28C23F7E003AAD10 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				D954674E28C23FC2003AAD10 /* App */,
+				D954674F28C23FCA003AAD10 /* Models */,
+				D954675028C23FD2003AAD10 /* Controllers */,
+				D954675128C23FE0003AAD10 /* Extensions */,
+				D954675228C23FFA003AAD10 /* Storyboards */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		D954674C28C23F8C003AAD10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D954674228C238ED003AAD10 /* LaunchScreen.storyboard */,
+				D954674028C238ED003AAD10 /* Assets.xcassets */,
+				D954674D28C23FA1003AAD10 /* Configuration */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D954674D28C23FA1003AAD10 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D954674528C238ED003AAD10 /* Info.plist */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		D954674E28C23FC2003AAD10 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D954673728C238EC003AAD10 /* AppDelegate.swift */,
+				D954673928C238EC003AAD10 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D954674F28C23FCA003AAD10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D954675028C23FD2003AAD10 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D954673B28C238EC003AAD10 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D954675128C23FE0003AAD10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D954675228C23FFA003AAD10 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
