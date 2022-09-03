@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MediaLibraryViewController.swift
 //  IphonePhotoScreen
 //
 //  Created by Артем Галай on 2.09.22.
@@ -7,12 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MediaLibraryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
 }
 
