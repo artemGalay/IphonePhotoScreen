@@ -11,9 +11,18 @@ class MyAlbumsCollectionViewCell: UICollectionViewCell {
 
     static let identifier = "MyAlbumCell"
 
+    var contents: AlbumsModel? {
+        didSet {
+            image.image = UIImage(named: contents?.image ?? "")
+            descriptionLabel.text = contents?.description
+            numberLabel.text = contents?.number
+        }
+    }
+
     private lazy var image: UIImageView = {
         let image = UIImageView()
         image.layer.cornerRadius = 5
+        image.clipsToBounds = true
         image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -21,14 +30,15 @@ class MyAlbumsCollectionViewCell: UICollectionViewCell {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
     private lazy var numberLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -37,7 +47,7 @@ class MyAlbumsCollectionViewCell: UICollectionViewCell {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .leading
-        stack.spacing = 10
+        stack.spacing = 5
         stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -63,10 +73,13 @@ class MyAlbumsCollectionViewCell: UICollectionViewCell {
     private func setupLayout() {
         NSLayoutConstraint.activate([
 
-            mainStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
-            mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0)
+            mainStack.topAnchor.constraint(equalTo: contentView.topAnchor),
+            mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+
+            mainStack.heightAnchor.constraint(equalToConstant: 600),
+            mainStack.widthAnchor.constraint(equalToConstant: 90)
         ])
     }
 }
