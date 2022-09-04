@@ -25,6 +25,7 @@ class AlbumsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         setupHierarchy()
         setupLayout()
+        setupNavigationBar()
     }
 
     func setupHierarchy() {
@@ -41,27 +42,43 @@ class AlbumsViewController: UIViewController {
         ])
     }
 
-            func createLayout() -> UICollectionViewCompositionalLayout {
+    private func setupNavigationBar() {
 
-                return UICollectionViewCompositionalLayout { sectionIndex, _ in
+        let barButtonMenu = UIMenu(title: "", children: [
+            UIAction(title: NSLocalizedString("Новый альбом", comment: ""),
+                     image: UIImage(systemName: "rectangle.stack.badge.plus"),
+                     handler: { _ in }),
+            UIAction(title: NSLocalizedString("Новая папка", comment: ""),
+                     image: UIImage(systemName: "folder.badge.plus"),
+                     handler: { _ in }),
+            UIAction(title: NSLocalizedString("Новый общий альбом", comment: ""),
+                     image: UIImage(systemName: "rectangle.stack.badge.person.crop"),
+                     handler: { _ in })])
 
-                    let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "",image: UIImage(systemName: "plus"), primaryAction: nil, menu: barButtonMenu)
+    }
 
-                    let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                    layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+    func createLayout() -> UICollectionViewCompositionalLayout {
 
-                    let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(550))
+        return UICollectionViewCompositionalLayout { sectionIndex, _ in
 
-                    let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: layoutItem, count: 2)
-                    layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
 
-                    let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
-                    sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
-                    sectionLayout.orthogonalScrollingBehavior = .paging
+            let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
+            layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
 
-                    return sectionLayout
-                }
-            }
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .absolute(550))
+
+            let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: layoutItem, count: 2)
+            layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+
+            let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
+            sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+            sectionLayout.orthogonalScrollingBehavior = .paging
+
+            return sectionLayout
+        }
+    }
 }
 
 extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
