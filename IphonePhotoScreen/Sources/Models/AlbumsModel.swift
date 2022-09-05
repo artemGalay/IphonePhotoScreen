@@ -26,6 +26,21 @@ extension AlbumsModel {
         ],
         [AlbumsModel(image: "люди", description: "Люди", number: "10"),
          AlbumsModel(image: "места", description: "Места", number: "2403")
+        ],
+        [AlbumsModel(image: "video", description: "Видео", number: "1012"),
+         AlbumsModel(image: "person.crop.square", description: "Селфи", number: "94"),
+         AlbumsModel(image: "livephoto", description: "Фото Live Photos", number: "219"),
+         AlbumsModel(image: "cube", description: "Портреты", number: "550"),
+         AlbumsModel(image: "pano", description: "Панорамы", number: "2"),
+         AlbumsModel(image: "slowmo", description: "Замедленно", number: "3"),
+         AlbumsModel(image: "video.square", description: "Киноэффект", number: "8"),
+         AlbumsModel(image: "camera.viewfinder", description: "Снимки экрана", number: "539"),
+         AlbumsModel(image: "record.circle", description: "Записи экрана", number: "28"),
+         AlbumsModel(image: "r.square.on.square", description: "RAW", number: "3")
+        ],
+        [AlbumsModel(image: "square.and.arrow.down", description: "Импортированные", number: "258"),
+         AlbumsModel(image: "eye.slash", description: "Скрытые", number: "0"),
+         AlbumsModel(image: "trash", description: "Недавно удаленные", number: "0")
         ]
     ]
 }

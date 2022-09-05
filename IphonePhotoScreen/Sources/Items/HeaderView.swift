@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderView: UICollectionReusableView {
+final class HeaderView: UICollectionReusableView {
 
     static let identifier = "HeaderView"
 
@@ -47,7 +47,6 @@ class HeaderView: UICollectionReusableView {
             titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
 
             allButton.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            allButton.topAnchor.constraint(equalTo: self.topAnchor),
             allButton.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
