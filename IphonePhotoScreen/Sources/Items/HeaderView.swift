@@ -7,18 +7,18 @@
 
 import UIKit
 
-final class HeaderView: UICollectionReusableView {
+class HeaderView: UICollectionReusableView {
 
     static let identifier = "HeaderView"
 
-    lazy var titleLabel: UILabel = {
+    lazy var leftHeader: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    lazy var allButton: UIButton = {
+    lazy var rightHeaderButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 20)
@@ -37,17 +37,17 @@ final class HeaderView: UICollectionReusableView {
     }
 
     private func setupHierarchy() {
-        addSubview(titleLabel)
-        addSubview(allButton)
+        addSubview(leftHeader)
+        addSubview(rightHeaderButton)
     }
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            leftHeader.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            leftHeader.leadingAnchor.constraint(equalTo: self.leadingAnchor),
 
-            allButton.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            allButton.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            rightHeaderButton.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            rightHeaderButton.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
 }
