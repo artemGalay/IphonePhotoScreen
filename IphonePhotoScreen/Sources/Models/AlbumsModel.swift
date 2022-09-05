@@ -19,10 +19,13 @@ extension AlbumsModel {
          AlbumsModel(image: "избранное", description: "Избранное", number: "8"),
          AlbumsModel(image: "insta", description: "Instagram", number: "34"),
          AlbumsModel(image: "whatsapp", description: "WhatsApp", number: "63"),
-         AlbumsModel(image: "faceapp", description: "FaceApp", number: "5"),
          AlbumsModel(image: "telegram", description: "Telegram", number: "79"),
          AlbumsModel(image: "aliexpress", description: "Aliexpress", number: "13"),
+         AlbumsModel(image: "faceapp", description: "FaceApp", number: "5"),
          AlbumsModel(image: "movavi", description: "Movavi Clips", number: "187")
+        ],
+        [AlbumsModel(image: "люди", description: "Люди", number: "10"),
+         AlbumsModel(image: "места", description: "Места", number: "2403")
         ]
     ]
 }
