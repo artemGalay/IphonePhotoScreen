@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlbumsViewController: UIViewController {
+final class AlbumsViewController: UIViewController {
 
     private lazy var collectionView: UICollectionView = {
         let layout = createLayout()
@@ -33,7 +33,6 @@ class AlbumsViewController: UIViewController {
     }
 
     func setupHierarchy() {
-
         view.addSubview(collectionView)
     }
 
@@ -101,7 +100,6 @@ class AlbumsViewController: UIViewController {
                 let layoutHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.97), heightDimension: .estimated(40))
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
 
-
                 let sectionLayout = NSCollectionLayoutSection(group: layoutGroup)
                 sectionLayout.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12)
                 sectionLayout.orthogonalScrollingBehavior = .paging
@@ -113,36 +111,35 @@ class AlbumsViewController: UIViewController {
     }
 }
 
-    extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
-        func numberOfSections(in collectionView: UICollectionView) -> Int {
-            return AlbumsModel.modelsArray.count
-        }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return AlbumsModel.modelsArray.count
+    }
 
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return AlbumsModel.modelsArray[section].count
-        }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return AlbumsModel.modelsArray[section].count
+    }
 
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumsCollectionViewCell.identifier, for: indexPath) as? MyAlbumsCollectionViewCell
-            item?.contents = AlbumsModel.modelsArray[indexPath.section][indexPath.item]
-            return item ?? UICollectionViewCell()
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumsCollectionViewCell.identifier, for: indexPath) as? MyAlbumsCollectionViewCell
+        item?.contents = AlbumsModel.modelsArray[indexPath.section][indexPath.item]
+        return item ?? UICollectionViewCell()
+    }
 
-        func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
-            switch indexPath.section {
+        switch indexPath.section {
 
-            case 0:
-                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.identifier, for: indexPath) as? HeaderView
-                header?.titleLabel.text = "Мои альбомы"
-                header?.allButton.setTitle("Все", for: .normal)
-                return header ?? UICollectionReusableView()
-            default:
-
-                let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.identifier, for: indexPath) as? HeaderView
-                header?.titleLabel.text = "Люди и места"
-                return header ?? UICollectionReusableView()
-            }
+        case 0:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.identifier, for: indexPath) as? HeaderView
+            header?.titleLabel.text = "Мои альбомы"
+            header?.allButton.setTitle("Все", for: .normal)
+            return header ?? UICollectionReusableView()
+        default:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderView.identifier, for: indexPath) as? HeaderView
+            header?.titleLabel.text = "Люди и места"
+            return header ?? UICollectionReusableView()
         }
     }
+}
