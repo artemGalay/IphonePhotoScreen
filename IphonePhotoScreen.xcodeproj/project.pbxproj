@@ -12,6 +12,7 @@
 		D95093C128C3476D00977EDF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95093C028C3476D00977EDF /* SearchViewController.swift */; };
 		D95093C428C46DE300977EDF /* MyAlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95093C328C46DE300977EDF /* MyAlbumsCell.swift */; };
 		D95093C628C5339400977EDF /* AlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95093C528C5339400977EDF /* AlbumsModel.swift */; };
+		D95093CA28C5F03A00977EDF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95093C928C5F03A00977EDF /* HeaderView.swift */; };
 		D954673828C238EC003AAD10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D954673728C238EC003AAD10 /* AppDelegate.swift */; };
 		D954673A28C238EC003AAD10 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D954673928C238EC003AAD10 /* SceneDelegate.swift */; };
 		D954673C28C238EC003AAD10 /* MediaLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D954673B28C238EC003AAD10 /* MediaLibraryViewController.swift */; };
@@ -26,6 +27,7 @@
 		D95093C028C3476D00977EDF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		D95093C328C46DE300977EDF /* MyAlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumsCell.swift; sourceTree = "<group>"; };
 		D95093C528C5339400977EDF /* AlbumsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsModel.swift; sourceTree = "<group>"; };
+		D95093C928C5F03A00977EDF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		D954673428C238EC003AAD10 /* IphonePhotoScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IphonePhotoScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D954673728C238EC003AAD10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D954673928C238EC003AAD10 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				D95093C328C46DE300977EDF /* MyAlbumsCell.swift */,
+				D95093C928C5F03A00977EDF /* HeaderView.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D95093CA28C5F03A00977EDF /* HeaderView.swift in Sources */,
 				D95093C428C46DE300977EDF /* MyAlbumsCell.swift in Sources */,
 				D954673C28C238EC003AAD10 /* MediaLibraryViewController.swift in Sources */,
 				D95093C128C3476D00977EDF /* SearchViewController.swift in Sources */,
