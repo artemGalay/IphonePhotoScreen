@@ -23,10 +23,10 @@ class MainTabBarController: UITabBarController {
 
         let mediaLibraryVC = MediaLibraryViewController()
         let forYouVC = ForYouViewController()
-        let albumcVC = UINavigationController(rootViewController: AlbumsViewController())
+        let albumsVC = UINavigationController(rootViewController: AlbumsViewController())
         let searchVC = SearchViewController()
 
-        self.setViewControllers([mediaLibraryVC, forYouVC, albumcVC, searchVC], animated: true)
+        self.setViewControllers([mediaLibraryVC, forYouVC, albumsVC, searchVC], animated: true)
 
         guard let items = tabBar.items else { return }
 
