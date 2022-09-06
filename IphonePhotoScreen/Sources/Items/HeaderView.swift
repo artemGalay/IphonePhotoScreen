@@ -10,6 +10,8 @@ import UIKit
 class HeaderView: UICollectionReusableView {
     
     static let identifier = "HeaderView"
+
+    // MARK: - UIElements
     
     lazy var leftHeader: UILabel = {
         let label = UILabel()
@@ -32,6 +34,8 @@ class HeaderView: UICollectionReusableView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,6 +46,8 @@ class HeaderView: UICollectionReusableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Setups
     
     private func setupHierarchy() {
         addSubview(lineView)

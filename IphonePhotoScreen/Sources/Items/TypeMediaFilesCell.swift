@@ -13,13 +13,16 @@ class TypeMediaFilesCell: UICollectionViewCell {
     
     var contents: AlbumsModel? {
         didSet {
-            image.image = UIImage(systemName: contents?.image ?? "")
+            imageView.image = UIImage(systemName: contents?.image ?? "")
             descriptionLabel.text = contents?.description
             numberLabel.text = contents?.number
         }
     }
+
+
+    // MARK: - UIElements
     
-    lazy var image: UIImageView = {
+    lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFit
@@ -52,6 +55,13 @@ class TypeMediaFilesCell: UICollectionViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
+
+    lazy var separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .separator
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
@@ -62,6 +72,8 @@ class TypeMediaFilesCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
+
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,13 +84,17 @@ class TypeMediaFilesCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Setups
     
     private func setupHierarchy() {
+        contentView.addSubview(separatorView)
         contentView.addSubview(mainStack)
-        mainStack.addArrangedSubview(image)
+        mainStack.addArrangedSubview(imageView)
         mainStack.addArrangedSubview(descriptionLabel)
         mainStack.addArrangedSubview(numberLabel)
         mainStack.addArrangedSubview(imageChevron)
+
     }
     
     private func setupLayout() {
@@ -91,14 +107,23 @@ class TypeMediaFilesCell: UICollectionViewCell {
             mainStack.heightAnchor.constraint(equalToConstant: 200),
             mainStack.widthAnchor.constraint(equalToConstant: 400),
             
-            image.widthAnchor.constraint(equalToConstant: 35),
-            image.heightAnchor.constraint(equalToConstant: 35),
+            imageView.widthAnchor.constraint(equalToConstant: 35),
+            imageView.heightAnchor.constraint(equalToConstant: 35),
             
-            descriptionLabel.centerYAnchor.constraint(equalTo: image.centerYAnchor),
+            descriptionLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
             
-            numberLabel.centerYAnchor.constraint(equalTo: image.centerYAnchor),
+            numberLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
             
-            imageChevron.centerYAnchor.constraint(equalTo: image.centerYAnchor),
+            imageChevron.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
+
+            separatorView.topAnchor.constraint(equalTo: mainStack.bottomAnchor, constant: 8),
+            separatorView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40),
+            separatorView.heightAnchor.constraint(equalToConstant: 0.8),
+            separatorView.widthAnchor.constraint(equalToConstant: 500)
         ])
+    }
+
+    func separatorViewOff(hide: Bool) {
+        separatorView.isHidden = hide
     }
 }
