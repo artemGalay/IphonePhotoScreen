@@ -1,5 +1,5 @@
 //
-//  MyAlbumswCell.swift
+//  MyAlbumsCell.swift
 //  IphonePhotoScreen
 //
 //  Created by Артем Галай on 4.09.22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyAlbumswCell: UICollectionViewCell {
+class MyAlbumsCell: UICollectionViewCell {
     
     static let identifier = "MyAlbumCell"
     
@@ -66,7 +66,7 @@ class MyAlbumswCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     // MARK: - Setups
     
     private func setupHierarchy() {

@@ -15,7 +15,7 @@ class HeaderView: UICollectionReusableView {
     
     lazy var leftHeader: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.font = UIFont.monospacedDigitSystemFont(ofSize: 22, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -23,12 +23,12 @@ class HeaderView: UICollectionReusableView {
     lazy var rightHeaderButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20)
+        button.titleLabel?.font = .systemFont(ofSize: 18)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
 
-    lazy var lineView: UIView = {
+    lazy var separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .separator
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -50,16 +50,16 @@ class HeaderView: UICollectionReusableView {
     // MARK: - Setups
     
     private func setupHierarchy() {
-        addSubview(lineView)
+        addSubview(separatorView)
         addSubview(leftHeader)
         addSubview(rightHeaderButton)
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            lineView.bottomAnchor.constraint(equalTo: leftHeader.topAnchor, constant: -10),
-            lineView.heightAnchor.constraint(equalToConstant: 0.8),
-            lineView.widthAnchor.constraint(equalToConstant: 500),
+            separatorView.bottomAnchor.constraint(equalTo: leftHeader.topAnchor, constant: -15),
+            separatorView.heightAnchor.constraint(equalToConstant: 0.8),
+            separatorView.widthAnchor.constraint(equalToConstant: 420),
 
             leftHeader.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             leftHeader.leadingAnchor.constraint(equalTo: self.leadingAnchor),

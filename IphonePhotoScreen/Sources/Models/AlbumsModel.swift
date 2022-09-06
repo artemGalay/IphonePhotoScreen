@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  AlbumsModel.swift
 //  IphonePhotoScreen
 //
 //  Created by Артем Галай on 4.09.22.
@@ -15,8 +15,8 @@ struct AlbumsModel: Hashable {
 
 extension AlbumsModel {
     static let modelsArray = [
-        [AlbumsModel(image: "недавние", description: "Недавние", number: "4777"),
-         AlbumsModel(image: "избранное", description: "Избранное", number: "8"),
+        [AlbumsModel(image: "recent", description: "Недавние", number: "4777"),
+         AlbumsModel(image: "favourites", description: "Избранное", number: "8"),
          AlbumsModel(image: "insta", description: "Instagram", number: "34"),
          AlbumsModel(image: "whatsapp", description: "WhatsApp", number: "63"),
          AlbumsModel(image: "telegram", description: "Telegram", number: "79"),
@@ -24,8 +24,8 @@ extension AlbumsModel {
          AlbumsModel(image: "faceapp", description: "FaceApp", number: "5"),
          AlbumsModel(image: "movavi", description: "Movavi Clips", number: "187")
         ],
-        [AlbumsModel(image: "люди", description: "Люди", number: "10"),
-         AlbumsModel(image: "места", description: "Места", number: "2403")
+        [AlbumsModel(image: "people", description: "Люди", number: "10"),
+         AlbumsModel(image: "places", description: "Места", number: "2403")
         ],
         [AlbumsModel(image: "video", description: "Видео", number: "1012"),
          AlbumsModel(image: "person.crop.square", description: "Селфи", number: "94"),

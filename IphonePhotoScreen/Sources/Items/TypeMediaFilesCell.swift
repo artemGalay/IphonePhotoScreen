@@ -19,7 +19,6 @@ class TypeMediaFilesCell: UICollectionViewCell {
         }
     }
 
-
     // MARK: - UIElements
     
     lazy var imageView: UIImageView = {
@@ -107,8 +106,8 @@ class TypeMediaFilesCell: UICollectionViewCell {
             mainStack.heightAnchor.constraint(equalToConstant: 200),
             mainStack.widthAnchor.constraint(equalToConstant: 400),
             
-            imageView.widthAnchor.constraint(equalToConstant: 35),
-            imageView.heightAnchor.constraint(equalToConstant: 35),
+            imageView.widthAnchor.constraint(equalToConstant: 30),
+            imageView.heightAnchor.constraint(equalToConstant: 30),
             
             descriptionLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
             
