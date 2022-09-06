@@ -8,9 +8,9 @@
 import UIKit
 
 class MyAlbumswCell: UICollectionViewCell {
-
+    
     static let identifier = "MyAlbumCell"
-
+    
     var contents: AlbumsModel? {
         didSet {
             image.image = UIImage(named: contents?.image ?? "")
@@ -18,7 +18,7 @@ class MyAlbumswCell: UICollectionViewCell {
             numberLabel.text = contents?.number
         }
     }
-
+    
     lazy var image: UIImageView = {
         let image = UIImageView()
         image.layer.cornerRadius = 5
@@ -27,14 +27,14 @@ class MyAlbumswCell: UICollectionViewCell {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
-
+    
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
@@ -42,7 +42,7 @@ class MyAlbumswCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
     lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -52,32 +52,32 @@ class MyAlbumswCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupHierarchy()
         setupLayout()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     private func setupHierarchy() {
         contentView.addSubview(mainStack)
         mainStack.addArrangedSubview(image)
         mainStack.addArrangedSubview(descriptionLabel)
         mainStack.addArrangedSubview(numberLabel)
     }
-
+    
     private func setupLayout() {
         NSLayoutConstraint.activate([
-
+            
             mainStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-
+            
             mainStack.heightAnchor.constraint(equalToConstant: 600),
             mainStack.widthAnchor.constraint(equalToConstant: 90)
         ])
