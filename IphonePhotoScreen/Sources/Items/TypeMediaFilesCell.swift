@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TypeMediaFilesCell: UICollectionViewCell {
+final class TypeMediaFilesCell: UICollectionViewCell {
     
     static let identifier = "TypeMediaFilesCell"
     
