@@ -24,6 +24,13 @@ final class AlbumsViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
+
+    lazy var lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +78,7 @@ final class AlbumsViewController: UIViewController {
                 let layoutHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.97), heightDimension: .fractionalWidth(0.12))
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: layoutHeaderSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
                 return layoutSectionHeader
+
             }
             
             switch sectionIndex {
