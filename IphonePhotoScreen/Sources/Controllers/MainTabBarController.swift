@@ -22,9 +22,9 @@ class MainTabBarController: UITabBarController {
     private func setupTabBarViewControllers() {
 
         let mediaLibraryVC = MediaLibraryViewController()
-        let forYouVC = ForYouViewController()
+        let forYouVC = UINavigationController(rootViewController: ForYouViewController())
         let albumsVC = UINavigationController(rootViewController: AlbumsViewController())
-        let searchVC = SearchViewController()
+        let searchVC = UINavigationController(rootViewController: SearchViewController())
 
         self.setViewControllers([mediaLibraryVC, forYouVC, albumsVC, searchVC], animated: true)
 

@@ -18,6 +18,8 @@ class MyAlbumswCell: UICollectionViewCell {
             numberLabel.text = contents?.number
         }
     }
+
+    // MARK: - UIElements
     
     lazy var image: UIImageView = {
         let image = UIImageView()
@@ -52,6 +54,8 @@ class MyAlbumswCell: UICollectionViewCell {
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
+
+    // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,6 +66,8 @@ class MyAlbumswCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Setups
     
     private func setupHierarchy() {
         contentView.addSubview(mainStack)
@@ -72,7 +78,6 @@ class MyAlbumswCell: UICollectionViewCell {
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            
             mainStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
