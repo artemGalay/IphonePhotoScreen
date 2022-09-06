@@ -25,6 +25,13 @@ class HeaderView: UICollectionReusableView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+
+    lazy var lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .separator
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,12 +44,17 @@ class HeaderView: UICollectionReusableView {
     }
     
     private func setupHierarchy() {
+        addSubview(lineView)
         addSubview(leftHeader)
         addSubview(rightHeaderButton)
     }
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
+            lineView.bottomAnchor.constraint(equalTo: leftHeader.topAnchor, constant: -10),
+            lineView.heightAnchor.constraint(equalToConstant: 0.8),
+            lineView.widthAnchor.constraint(equalToConstant: 500),
+
             leftHeader.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             leftHeader.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             
