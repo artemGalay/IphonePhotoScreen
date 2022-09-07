@@ -10,18 +10,10 @@ import UIKit
 final class TypeMediaFilesCell: UICollectionViewCell {
     
     static let identifier = "TypeMediaFilesCell"
-    
-    var contents: AlbumsModel? {
-        didSet {
-            imageView.image = UIImage(systemName: contents?.image ?? "")
-            descriptionLabel.text = contents?.description
-            numberLabel.text = contents?.number
-        }
-    }
 
     // MARK: - UIElements
     
-    lazy var imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFit
@@ -29,7 +21,7 @@ final class TypeMediaFilesCell: UICollectionViewCell {
         return image
     }()
     
-    lazy var descriptionLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 22)
         label.textColor = .systemBlue
@@ -37,7 +29,7 @@ final class TypeMediaFilesCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var numberLabel: UILabel = {
+    private lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 20)
         label.textColor = .systemGray
@@ -45,7 +37,7 @@ final class TypeMediaFilesCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var imageChevron: UIImageView = {
+    private lazy var imageChevron: UIImageView = {
         let image = UIImageView()
         image.clipsToBounds = true
         image.image = UIImage(systemName: "chevron.right")
@@ -55,14 +47,14 @@ final class TypeMediaFilesCell: UICollectionViewCell {
         return image
     }()
 
-    lazy var separatorView: UIView = {
+    private lazy var separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = .separator
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var mainStack: UIStackView = {
+    private lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
         stack.alignment = .leading
@@ -93,7 +85,6 @@ final class TypeMediaFilesCell: UICollectionViewCell {
         mainStack.addArrangedSubview(descriptionLabel)
         mainStack.addArrangedSubview(numberLabel)
         mainStack.addArrangedSubview(imageChevron)
-
     }
     
     private func setupLayout() {
@@ -122,7 +113,15 @@ final class TypeMediaFilesCell: UICollectionViewCell {
         ])
     }
 
+    // MARK: - Configuration
+    
     func separatorViewOff(hide: Bool) {
         separatorView.isHidden = hide
+    }
+
+    func configuration(model: AlbumsModel) {
+        self.imageView.image = UIImage(systemName: model.image)
+        self.descriptionLabel.text = model.description
+        self.numberLabel.text = model.number
     }
 }
