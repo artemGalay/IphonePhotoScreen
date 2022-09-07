@@ -68,4 +68,11 @@ final class HeaderView: UICollectionReusableView {
             rightHeaderButton.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
+
+    // MARK: - Configuration
+
+    func configure(leftHeader: String, rightHeader: String?) {
+        self.leftHeader.text = leftHeader
+        self.rightHeaderButton.setTitle(rightHeader, for: .normal)
+    }
 }

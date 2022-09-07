@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MediaLibraryViewController: UIViewController {
+final class MediaLibraryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

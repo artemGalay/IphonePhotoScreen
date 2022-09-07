@@ -11,17 +11,9 @@ final class MyAlbumsCell: UICollectionViewCell {
     
     static let identifier = "MyAlbumCell"
     
-    var contents: AlbumsModel? {
-        didSet {
-            image.image = UIImage(named: contents?.image ?? "")
-            descriptionLabel.text = contents?.description
-            numberLabel.text = contents?.number
-        }
-    }
-
     // MARK: - UIElements
     
-    lazy var image: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.layer.cornerRadius = 5
         image.clipsToBounds = true
@@ -30,14 +22,14 @@ final class MyAlbumsCell: UICollectionViewCell {
         return image
     }()
     
-    lazy var descriptionLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var numberLabel: UILabel = {
+    private lazy var numberLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 16)
         label.textColor = .systemGray
@@ -45,7 +37,7 @@ final class MyAlbumsCell: UICollectionViewCell {
         return label
     }()
     
-    lazy var mainStack: UIStackView = {
+    private lazy var mainStack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
         stack.alignment = .leading
@@ -71,7 +63,7 @@ final class MyAlbumsCell: UICollectionViewCell {
     
     private func setupHierarchy() {
         contentView.addSubview(mainStack)
-        mainStack.addArrangedSubview(image)
+        mainStack.addArrangedSubview(imageView)
         mainStack.addArrangedSubview(descriptionLabel)
         mainStack.addArrangedSubview(numberLabel)
     }
@@ -86,5 +78,13 @@ final class MyAlbumsCell: UICollectionViewCell {
             mainStack.heightAnchor.constraint(equalToConstant: 600),
             mainStack.widthAnchor.constraint(equalToConstant: 90)
         ])
+    }
+
+    // MARK: - Configuration
+
+    func configuration(model: AlbumsModel) {
+        self.imageView.image = UIImage(named: model.image)
+        self.descriptionLabel.text = model.description
+        self.numberLabel.text = model.number
     }
 }
