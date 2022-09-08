@@ -19,6 +19,7 @@ final class MainTabBarController: UITabBarController {
         tabBar.backgroundColor = .tertiarySystemFill
         tabBar.tintColor = .systemBlue
     }
+    
     private func setupTabBarViewControllers() {
 
         let mediaLibrary = UINavigationController(rootViewController: MediaLibraryViewController())
@@ -26,7 +27,7 @@ final class MainTabBarController: UITabBarController {
         let albums = UINavigationController(rootViewController: AlbumsViewController())
         let search = UINavigationController(rootViewController: SearchViewController())
 
-        self.setViewControllers([mediaLibrary, forYou, albums, search], animated: true)
+        setViewControllers([mediaLibrary, forYou, albums, search], animated: true)
 
         mediaLibrary.title = "Медиатека"
         forYou.title = "Для Вас"
